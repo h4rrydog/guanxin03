@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guanxin — Design 3b reference (Engineer & Humanist)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Space+Grotesk:wght@400;500;600;700&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:#efede8;display:flex;justify-content:center;padding:0}
+/* ---- design reference: Guanxin homepage, direction "3b" ---- */
+/* ================= OPTION A — "Dossier" (IBM Plex, technical) ================= */
+.a{--ink:#14171a;--sub:#5a6068;--line:#e2e2df;--acc:#d0472a;--paper:#fafaf8;width:1200px;background:var(--paper);color:var(--ink);font-family:'IBM Plex Sans',sans-serif;font-size:16px;line-height:1.5}
+.a *{box-sizing:border-box}
+.a .mono{font-family:'IBM Plex Mono',monospace}
+.a-nav{display:flex;align-items:center;justify-content:space-between;padding:20px 48px;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(250,250,248,.92);backdrop-filter:blur(6px);z-index:5}
+.a-logo{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:16px;letter-spacing:.02em}
+.a-logo span{color:var(--acc)}
+.a-navlinks{display:flex;gap:26px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--sub)}
+.a-navlinks a{text-decoration:none}
+.a-navr{display:flex;align-items:center;gap:18px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--sub)}
+.a-avail{display:inline-flex;align-items:center;gap:7px;color:var(--ink)}
+.a-dot{width:7px;height:7px;border-radius:50%;background:#2ea36a;box-shadow:0 0 0 3px rgba(46,163,106,.18)}
+.a-lang b{color:var(--ink)}
+.a-hero{padding:66px 48px 54px;display:grid;grid-template-columns:1.35fr .9fr;gap:48px;border-bottom:1px solid var(--line);background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:38px 38px;background-position:-1px -1px}
+.a-kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--acc);letter-spacing:.06em;text-transform:uppercase;margin-bottom:22px}
+.a-h1{font-size:53px;line-height:1.04;letter-spacing:-.022em;font-weight:600;margin:0 0 22px;max-width:15ch}
+.a-lead{font-size:18.5px;line-height:1.55;color:var(--sub);max-width:44ch;margin:0 0 30px}
+.a-lead b{color:var(--ink);font-weight:600}
+.a-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.a-btn{font-family:'IBM Plex Mono',monospace;font-size:13px;padding:13px 22px;border-radius:7px;text-decoration:none;border:1px solid var(--ink);display:inline-block}
+.a-btn.p{background:var(--ink);color:var(--paper)}
+.a-btn.g{color:var(--ink)}
+.a-specs{border:1px solid var(--ink);background:#fff;align-self:start}
+.a-specs-h{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--sub);padding:12px 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between}
+.a-spec{display:flex;justify-content:space-between;gap:14px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.a-spec:last-child{border-bottom:0}
+.a-spec .k{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--sub);letter-spacing:.03em}
+.a-spec .v{font-weight:600;font-size:14px;text-align:right}
+.a-spec .v small{display:block;font-weight:400;color:var(--sub);font-size:11.5px;font-family:'IBM Plex Mono',monospace}
+.a-logos{padding:26px 48px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:34px;flex-wrap:wrap}
+.a-logos .lb{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--sub);letter-spacing:.05em;text-transform:uppercase}
+.a-logos .lg{font-weight:600;font-size:15px;color:#41474d;letter-spacing:.01em}
+.a-sec{padding:60px 48px;border-bottom:1px solid var(--line)}
+.a-sech{display:flex;align-items:baseline;gap:16px;margin-bottom:36px}
+.a-secn{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--acc)}
+.a-sect{font-size:15px;font-weight:600;letter-spacing:.01em}
+.a-secd{margin-left:auto;font-size:14px;color:var(--sub);max-width:40ch;text-align:right}
+.a-svc{display:grid;grid-template-columns:repeat(2,1fr)}
+.a-svc-i{padding:28px 30px 30px;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.a-svc-i:nth-child(odd){border-left:0}
+.a-svc-n{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--sub);margin-bottom:14px}
+.a-svc-t{font-size:21px;font-weight:600;letter-spacing:-.01em;margin:0 0 10px}
+.a-svc-p{font-size:14.5px;color:var(--sub);line-height:1.55;margin:0}
+.a-work{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.a-w{background:#fff;padding:0}
+.a-wimg{aspect-ratio:4/3;background:repeating-linear-gradient(45deg,#eeeeeb 0 9px,#f6f6f3 9px 18px);position:relative;border-bottom:1px solid var(--line)}
+.a-wtag{position:absolute;top:12px;left:12px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;color:var(--sub);background:rgba(255,255,255,.85);padding:4px 8px;border-radius:4px}
+.a-wph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#b6b6b0}
+.a-wb{padding:18px 20px 22px}
+.a-wc{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--acc);margin-bottom:7px}
+.a-wt{font-size:17px;font-weight:600;margin:0 0 6px;letter-spacing:-.01em}
+.a-wp{font-size:13.5px;color:var(--sub);line-height:1.5;margin:0}
+.a-labs{padding:60px 48px;background:var(--ink);color:#eef0f2;border-bottom:1px solid var(--ink)}
+.a-labs .a-secn{color:#ff8a6a}
+.a-labs-g{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center;margin-top:8px}
+.a-labs h3{font-size:34px;letter-spacing:-.02em;font-weight:600;margin:0 0 16px;line-height:1.1}
+.a-labs p{color:#a7adb4;font-size:15.5px;line-height:1.6;margin:0 0 22px}
+.a-labs .buy{display:flex;gap:12px;flex-wrap:wrap}
+.a-labs .a-btn{border-color:#454b52}
+.a-labs .a-btn.p{background:#ff8a6a;color:var(--ink);border-color:#ff8a6a}
+.a-labs .a-btn.g{color:#eef0f2}
+.a-labs-card{background:#1c2024;border:1px solid #2a2f34;border-radius:10px;padding:22px}
+.a-labs-card .row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #2a2f34;font-size:14px}
+.a-labs-card .row:last-child{border-bottom:0}
+.a-labs-card .row .k{color:#a7adb4;font-family:'IBM Plex Mono',monospace;font-size:12px}
+.a-labs-card .row .v{font-weight:600}
+.a-about{display:grid;grid-template-columns:1fr 1fr;gap:44px}
+.a-about p{font-size:15.5px;line-height:1.65;color:#33383d;margin:0 0 16px}
+.a-about p b{color:var(--ink)}
+.a-cred{border:1px solid var(--line);border-radius:8px;overflow:hidden;align-self:start}
+.a-cred .a-spec{border-color:var(--line)}
+.a-foot{padding:54px 48px 40px;display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:end}
+.a-foot .big{font-size:40px;letter-spacing:-.02em;font-weight:600;line-height:1.05;margin:0 0 16px}
+.a-foot .em{font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--acc);text-decoration:none}
+.a-foot .meta{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--sub);line-height:1.8}
+.a-foot .han{color:var(--ink)}
+
+/* ---- brand logo + refined red (turn 2) ---- */
+@keyframes gx-assemble{0%{opacity:0;transform:rotate(-26deg) scale(.5) translateY(16px)}55%{opacity:1}100%{opacity:1;transform:none}}
+@keyframes gx-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.gx-float{display:inline-block;animation:gx-float 6.5s ease-in-out infinite}
+.gx-mark{display:block;animation:gx-assemble 1s cubic-bezier(.2,.75,.25,1) both}
+.a.v2{--acc:#d93a2a}
+.a.v2 .a-labs .a-secn{color:#ff8f73}
+.a.v2 .a-labs .a-btn.p{background:#ff8f73;border-color:#ff8f73}
+.a-brand{display:flex;align-items:center;gap:11px}
+.a-brand img{height:30px;width:auto;display:block}
+.b.v2{--acc:#d93a2a}
+.b-brand{display:flex;align-items:center;gap:12px}
+.b-brand img{height:34px;width:auto;display:block}
+
+/* ---- turn 3: care woven into the Dossier ---- */
+.a-mani{padding:52px 48px;border-bottom:1px solid var(--line);background:linear-gradient(90deg,rgba(217,58,42,.05),rgba(217,58,42,.02))}
+.a-mani .lead-k{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--acc);margin-bottom:18px}
+.a-mani p{font-size:28px;line-height:1.4;letter-spacing:-.016em;font-weight:500;margin:0;max-width:34ch;color:var(--ink)}
+.a-mani em{color:var(--acc);font-style:normal}
+.a-hpair .a-h1 .l2{display:block;color:var(--acc)}
+.a-secn.care{color:var(--acc)}
+.a-outc{display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--sub);margin-bottom:7px;letter-spacing:.02em}
+</style>
+</head>
+<body>
+<div class="a v2">
+<nav class="a-nav">
+  <div class="a-brand"><img src="guanxin.svg" alt="Guanxin"><div class="a-logo">guanxin<span>.</span></div></div>
+  <div class="a-navlinks"><a href="#">Work</a><a href="#">Principles</a><a href="#">Services</a><a href="#">Labs</a><a href="#why-3b">About</a><a href="#">Contact</a></div>
+  <div class="a-navr"><span class="a-lang"><b>EN</b> / DE</span><span class="a-avail"><span class="a-dot"></span>Available</span></div>
+</nav>
+<header class="a-hero a-hpair">
+  <div>
+    <div class="gx-float" style="margin-bottom:26px"><img class="gx-mark" src="guanxin.svg" alt="" style="height:82px;width:auto"></div>
+    <div class="a-kicker">Dr Ifung Lu · Innovation &amp; Product Technologist</div>
+    <h1 class="a-h1">Engineered to survive reality.<span class="l2">Designed because people matter.</span></h1>
+    <p class="a-lead">PhD, MIT-trained engineer, 13 US patents. I bring the <b>rigour of medicine and the empathy of design</b> to the same table — and ship what most teams only prototype.</p>
+    <div class="a-cta"><a class="a-btn p" href="mailto:hi@guanxin.de">Book a scoping call →</a><a class="a-btn g" href="#">Download CV / capabilities</a></div>
+  </div>
+  <div class="a-specs">
+    <div class="a-specs-h"><span>Credentials</span><span>/ verified</span></div>
+    <div class="a-spec"><span class="k">Experience</span><span class="v">25 yrs<small>design + engineering</small></span></div>
+    <div class="a-spec"><span class="k">Patents</span><span class="v">13 US<small>Ethicon / J&amp;J</small></span></div>
+    <div class="a-spec"><span class="k">Doctorate</span><span class="v">PhD, UCL<small>Medical Physics &amp; Bioeng.</small></span></div>
+    <div class="a-spec"><span class="k">Engineering</span><span class="v">MIT<small>Mech. Eng. + Media Lab</small></span></div>
+    <div class="a-spec"><span class="k">Work rights</span><span class="v">EU · UK · US<small>no visa required</small></span></div>
+  </div>
+</header>
+<div class="a-logos">
+  <span class="lb">Trusted on work for</span>
+  <span class="lg">Johnson &amp; Johnson</span><span class="lg">NHS</span><span class="lg">Baxter</span><span class="lg">ConvaTec</span><span class="lg">Illumina</span><span class="lg">HP</span><span class="lg">Bowers &amp; Wilkins</span><span class="lg">WDR</span>
+</div>
+<section class="a-sec">
+  <div class="a-sech"><span class="a-secn care">00</span><span class="a-sect">How I work — guān xīn 關心, to care</span><span class="a-secd">The mechanism is never the point. These four principles sit under every engagement.</span></div>
+  <div class="a-svc">
+    <div class="a-svc-i"><div class="a-svc-n" style="color:var(--acc)">◆ 01</div><h4 class="a-svc-t">Start with the human</h4><p class="a-svc-p">Deep user, clinical and field research before a single mechanism. I design for the moments that matter to real people.</p></div>
+    <div class="a-svc-i"><div class="a-svc-n" style="color:var(--acc)">◆ 02</div><h4 class="a-svc-t">Rigour is a form of care</h4><p class="a-svc-p">Design control, evidence and safety aren't bureaucracy — in health, they're how you honour the people who'll depend on it.</p></div>
+    <div class="a-svc-i"><div class="a-svc-n" style="color:var(--acc)">◆ 03</div><h4 class="a-svc-t">Ship, don't theorize</h4><p class="a-svc-p">Working prototypes over slideware. From cadaver lab to the App Store, I make the impossible tangible — fast, with tiny teams.</p></div>
+    <div class="a-svc-i"><div class="a-svc-n" style="color:var(--acc)">◆ 04</div><h4 class="a-svc-t">Technology for good</h4><p class="a-svc-p">Design for humanistic solutions; technology to scale them and grant superpowers. A social-enterprise ethos, applied commercially.</p></div>
+  </div>
+</section>
+<section class="a-sec">
+  <div class="a-sech"><span class="a-secn">01</span><span class="a-sect">Services</span><span class="a-secd">Come for the technical expertise. The design thinking comes as standard.</span></div>
+  <div class="a-svc">
+    <div class="a-svc-i"><div class="a-svc-n">→ 01</div><h4 class="a-svc-t">Product &amp; technology strategy</h4><p class="a-svc-p">Figure out what's next. Landscape analysis, opportunity framing and technical due diligence for teams facing unknown unknowns.</p></div>
+    <div class="a-svc-i"><div class="a-svc-n">→ 02</div><h4 class="a-svc-t">Engineering design &amp; prototyping</h4><p class="a-svc-p">Concept to working device — mechanisms, medical devices and hardware, under design control (ISO 13485) where it counts.</p></div>
+    <div class="a-svc-i"><div class="a-svc-n">→ 03</div><h4 class="a-svc-t">Design &amp; UX for regulated spaces</h4><p class="a-svc-p">Research-led interaction and UI design for clinical and consumer health products that real people can actually use.</p></div>
+    <div class="a-svc-i"><div class="a-svc-n">→ 04</div><h4 class="a-svc-t">AI-leveraged lean delivery</h4><p class="a-svc-p">Ship real products with very small teams. I run production and ops the way I built Singfinger — two people, heavy AI tooling.</p></div>
+  </div>
+</section>
+<section class="a-sec">
+  <div class="a-sech"><span class="a-secn">02</span><span class="a-sect">Selected work</span><span class="a-secd">Atoms &amp; bits — from surgical instruments to digital therapeutics.</span></div>
+  <div class="a-work">
+    <div class="a-w"><div class="a-wimg"><span class="a-wtag">MEDTECH · ATOMS</span><span class="a-wph">[ articulating instrument ]</span></div><div class="a-wb"><div class="a-wc">Ethicon / J&amp;J</div><h5 class="a-wt">Articulating surgical instruments</h5><p class="a-wp">Manually articulating endoscopic devices for minimally-invasive surgery. Named inventor on 13 US patents — cadaver lab to OR.</p></div></div>
+    <div class="a-w"><div class="a-wimg"><span class="a-wtag">MEDTECH · ATOMS</span><span class="a-wph">[ vacuum prep system ]</span></div><div class="a-wb"><div class="a-wc">Baxter</div><h5 class="a-wt">IV nutrition vacuum system</h5><p class="a-wp">A peelable multi-chamber IV bag and vacuum-based system for on-site reconstitution of freeze-dried micronutrients.</p></div></div>
+    <div class="a-w"><div class="a-wimg"><span class="a-wtag">MEDTECH · ATOMS</span><span class="a-wph">[ iris coupling ]</span></div><div class="a-wb"><div class="a-wc">ConvaTec</div><h5 class="a-wt">Dignified ostomy coupling</h5><p class="a-wp">Linkage-based and polymer-film iris coupling concepts, reinventing ostomy care to be more empathetic to emotional needs.</p></div></div>
+    <div class="a-w"><div class="a-wimg"><span class="a-wtag">DIGITAL HEALTH · BITS</span><span class="a-wph">[ spirometry whistle ]</span></div><div class="a-wb"><div class="a-wc">NHS Helix Centre</div><h5 class="a-wt">Gamified asthma management</h5><p class="a-wp">A pitch-shifting whistle plus a smartphone app deriving spirometry from sound — keeping kids engaged with their care.</p></div></div>
+    <div class="a-w"><div class="a-wimg"><span class="a-wtag">DIGITAL HEALTH · BITS</span><span class="a-wph">[ biofeedback UI ]</span></div><div class="a-wb"><div class="a-wc">BioBeats</div><h5 class="a-wt">Music from your heartbeat</h5><p class="a-wp">Stress &amp; anxiety programme using breathing, CBT and biometric-generated music. Innovate UK seed; UCL clinical partnership.</p></div></div>
+    <div class="a-w"><div class="a-wimg"><span class="a-wtag">SOCIAL ENTERPRISE · BITS</span><span class="a-wph">[ support network ]</span></div><div class="a-wb"><div class="a-wc">Grouple</div><h5 class="a-wt">Living well with dementia</h5><p class="a-wp">A micro-social network for families caring for a loved one. Full-stack MVP; seed from Design Council &amp; UK Dept of Health.</p></div></div>
+  </div>
+</section>
+<section class="a-labs">
+  <div class="a-sech"><span class="a-secn">03</span><span class="a-sect" style="color:#eef0f2">Guanxin Labs — products, for sale now</span></div>
+  <div class="a-labs-g">
+    <div>
+      <h3>Singfinger</h3>
+      <p>A German sign-supported communication platform for non-verbal and disabled children. An iOS &amp; Android app, a 700+ icon sign library built on a custom 3D rig, 150+ videos including WDR co-productions — and the Singfinger&nbsp;Club paid membership. Built and run by two people, leaning hard on AI tooling. Sold under Guanxin Labs.</p>
+      <div class="buy"><a class="a-btn p" href="#">Get the app →</a><a class="a-btn g" href="#">Join Singfinger Club</a></div>
+    </div>
+    <div class="a-labs-card">
+      <div class="row"><span class="k">Platform</span><span class="v">iOS · Android</span></div>
+      <div class="row"><span class="k">Sign library</span><span class="v">700+ icons</span></div>
+      <div class="row"><span class="k">Video</span><span class="v">150+ · incl. WDR</span></div>
+      <div class="row"><span class="k">Club launch</span><span class="v">18 founding members</span></div>
+      <div class="row"><span class="k">Trading as</span><span class="v">guanxin.labs</span></div>
+    </div>
+  </div>
+</section>
+<section class="a-sec" id="why-3b">
+  <div class="a-sech"><span class="a-secn care">04</span><span class="a-sect">Why I do this</span></div>
+  <div class="a-about">
+    <div>
+      <p><b>guān xīn (關心)</b> — <i>verb</i> — to care for, to be concerned with. It's the name and the whole point: design for humanistic solutions, technology to scale them and grant superpowers. Firmly tech-for-good.</p>
+      <p>Surgical instruments at J&amp;J, NHS innovation at the Helix Centre inside St Mary's Hospital, product consulting for Baxter, ConvaTec and Illumina — and most recently Singfinger, built from scratch with a team of two. Different problems, one thread: build the thing that actually helps.</p>
+      <p>I'm looking for what's next: a product or technology leadership role, a fractional / consulting engagement, or a founding team — at the intersection of healthcare, medtech and AI-leveraged product development.</p>
+    </div>
+    <div class="a-cred">
+      <div class="a-specs-h"><span>Profile</span><span>/ Dr Ifung Lu</span></div>
+      <div class="a-spec"><span class="k">Based</span><span class="v">Cologne / Bonn<small>Troisdorf, Germany</small></span></div>
+      <div class="a-spec"><span class="k">Languages</span><span class="v">EN native<small>DE B2 · working</small></span></div>
+      <div class="a-spec"><span class="k">Passports</span><span class="v">UK · US<small>contract without visas</small></span></div>
+      <div class="a-spec"><span class="k">Sectors</span><span class="v">Health · Medtech<small>consumer · social</small></span></div>
+      <div class="a-spec"><span class="k">Open to</span><span class="v">Freelance · fractional<small>&amp; the right permanent role</small></span></div>
+    </div>
+  </div>
+</section>
+<footer class="a-foot">
+  <div>
+    <p class="big">Let's build what matters.</p>
+    <a class="a-btn p" href="mailto:hi@guanxin.de" style="margin-right:12px">hi@guanxin.de</a>
+    <a class="em" href="#">science. magic. mischief. →</a>
+  </div>
+  <div class="meta">
+    <span class="han">Guanxin · Dr Ifung Lu</span><br>
+    Paul-Keller-Straße 7, 53840 Troisdorf<br>
+    guanxin.consulting · guanxin.labs<br>
+    © 2013–2026 · Impressum
+  </div>
+</footer>
+</div>
+</body>
+</html>
