@@ -13,6 +13,28 @@ body {
     padding: 0;
 }
 
+/* ---- accessibility: skip link ---- */
+
+.skip-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    z-index: 20;
+    background: #14171a;
+    color: #fafaf8;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 0 0 7px 0;
+    transition: transform .15s ease;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
 /* ---- design reference: Guanxin homepage, direction "3b" ---- */
 
 /* ---- self-hosted fonts (no Google Fonts API) ---- */
@@ -79,7 +101,7 @@ body {
     --ink: #14171a;
     --sub: #5a6068;
     --line: #e2e2df;
-    --acc: #d0472a;
+    --acc: #ce3728;
     --paper: #fafaf8;
     width: 100%;
     max-width: 1200px;
@@ -260,17 +282,24 @@ body {
     border-bottom: 0;
 }
 
+.a-specs dl,
+.a-cred dl {
+    margin: 0;
+}
+
 .a-spec .k {
     font-family: 'IBM Plex Mono',monospace;
     font-size: 11.5px;
     color: var(--sub);
     letter-spacing: .03em;
+    margin: 0;
 }
 
 .a-spec .v {
     font-weight: 600;
     font-size: 14px;
     text-align: right;
+    margin: 0;
 }
 
 .a-spec .v small {
@@ -409,12 +438,9 @@ body {
 .a-wph {
     position: absolute;
     inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'IBM Plex Mono',monospace;
-    font-size: 11px;
-    color: #b6b6b0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .a-wb {
@@ -501,6 +527,7 @@ body {
     border: 1px solid #2a2f34;
     border-radius: 10px;
     padding: 22px;
+    margin: 0;
 }
 
 .a-labs-card .row {
@@ -519,10 +546,12 @@ body {
     color: #a7adb4;
     font-family: 'IBM Plex Mono',monospace;
     font-size: 12px;
+    margin: 0;
 }
 
 .a-labs-card .row .v {
     font-weight: 600;
+    margin: 0;
 }
 
 .a-about {
@@ -628,7 +657,7 @@ body {
 }
 
 .a.v2 {
-    --acc: #d93a2a;
+    --acc: #ce3728;
 }
 
 .a.v2 .a-labs .a-secn {
@@ -770,21 +799,18 @@ body {
     .a-labs-g {
         grid-template-columns: 1fr;
     }
-}
 
-@media (max-width: 640px) {
-    .a-nav {
-        padding: 16px 24px;
-    }
-
+    /* nav switches to hamburger/drawer here (not at the 640px content
+       breakpoint) because the horizontal nav itself runs out of room
+       and wraps mid-word well before 640px — see design.md §8 */
     .a-navtoggle {
         display: flex;
     }
 
     .a-navdrawer {
         display: none;
-        position: fixed;
-        top: 65px;
+        position: absolute;
+        top: 100%;
         left: 0;
         right: 0;
         flex-direction: column;
@@ -811,6 +837,12 @@ body {
     .a-navr {
         padding-top: 12px;
         justify-content: space-between;
+    }
+}
+
+@media (max-width: 640px) {
+    .a-nav {
+        padding: 16px 24px;
     }
 
     .a-hero,
