@@ -36,4 +36,12 @@
             closeDrawer(true);
         }
     });
+
+    nav.querySelectorAll('.a-lang a[hreflang]').forEach(function (link) {
+        // file:// has no directory index, so point at index.html explicitly when opened from disk.
+        var base = link.getAttribute('href') + (location.protocol === 'file:' ? 'index.html' : '');
+        link.addEventListener('click', function () {
+            link.setAttribute('href', base + location.hash);
+        });
+    });
 })();

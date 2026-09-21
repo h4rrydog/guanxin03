@@ -181,8 +181,25 @@ align-content: {
     box-shadow: 0 0 0 3px rgba(46,163,106,.18);
 }
 
-.a-lang b {
+.a-lang {
+    display: inline-flex;
+    align-items: center;
+}
+
+.a-lang a {
+    color: var(--sub);
+    text-decoration: none;
+    padding: 6px 4px;
+}
+
+.a-lang a[aria-current="page"] {
     color: var(--ink);
+    font-weight: 600;
+}
+
+.a-lang a:not([aria-current]):hover {
+    color: var(--ink);
+    text-decoration: underline;
 }
 
 .a-hero {
@@ -831,11 +848,6 @@ align-content: {
     .a-navlinks a {
         padding: 14px 0;
         border-bottom: 1px solid var(--line);
-    }
-
-    .a-navr {
-        padding-top: 12px;
-        justify-content: space-between;
     }
 }
 

@@ -6,6 +6,9 @@
         <title>Guanxin. Dr Ifung Lu.</title>
         <link rel="icon" type="image/x-icon" href="GFX/favicon.ico">
         <link rel="stylesheet" href="guanxin.css">
+        <link rel="alternate" hreflang="en" href="https://guanxin.de/">
+        <link rel="alternate" hreflang="de" href="https://guanxin.de/de/">
+        <link rel="alternate" hreflang="x-default" href="https://guanxin.de/">
     </head>
     <body>
         <a class="skip-link" href="#main">Skip to main content</a>
@@ -16,11 +19,6 @@
                     <div class="a-logo">guanxin<span>.</span>
                     </div>
                 </div>
-                <button class="a-navtoggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="a-navdrawer">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
                 <div class="a-navdrawer" id="a-navdrawer">
                     <div class="a-navlinks">
                         <a href="#Principles">Principles</a>
@@ -29,9 +27,18 @@
                         <a href="#About">About</a>
                         <a href="#Contact">Contact</a>
                     </div>
-                    <div class="a-navr">
-                        <span class="a-lang"><b>EN</b> / DE</span>
-                    </div>
+                </div>
+                <div class="a-navr">
+                    <span class="a-lang" role="group" aria-label="Language / Sprache">
+                        <a href="./" aria-current="page" aria-label="English">EN</a>
+                        <span aria-hidden="true">/</span>
+                        <a href="de/" hreflang="de" lang="de" aria-label="Deutsch">DE</a>
+                    </span>
+                    <button class="a-navtoggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="a-navdrawer">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
             </nav>
             <header class="a-hero a-hpair">
