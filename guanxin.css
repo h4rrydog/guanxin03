@@ -791,6 +791,156 @@ align-content: {
     display: contents;
 }
 
+/* ---- Forms (contact page) ---- */
+/* Nav brand is a plain div on the homepages but a link to the homepage on sub-pages
+   (contact, legal) — style it identically either way. */
+a.a-brand {
+    text-decoration: none;
+    color: inherit;
+}
+
+.a-contact {
+    display: grid;
+    grid-template-columns: 1.35fr .9fr;
+    gap: 48px;
+}
+
+.a-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 640px;
+}
+
+.a-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* `hidden` alone loses to the display rules above, so the form would stay
+   on screen after a successful send. */
+.a-form [hidden] {
+    display: none;
+}
+
+.a-label {
+    font-family: 'IBM Plex Mono',monospace;
+    font-size: 12px;
+    color: var(--sub);
+    letter-spacing: .03em;
+}
+
+.a-input {
+    font-family: 'IBM Plex Sans',sans-serif;
+    font-size: 16px;
+    padding: 13px 16px;
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    background: #fff;
+    color: var(--ink);
+    width: 100%;
+}
+
+.a-input::placeholder {
+    color: var(--sub);
+}
+
+.a-input:focus {
+    outline: none;
+    border-color: var(--acc);
+    box-shadow: 0 0 0 3px rgba(206,55,40,.12);
+}
+
+.a-input:disabled {
+    background: #f4f4f2;
+    color: var(--sub);
+    cursor: not-allowed;
+}
+
+textarea.a-input {
+    min-height: 160px;
+    resize: vertical;
+}
+
+select.a-input {
+    cursor: pointer;
+}
+
+.a-field-err {
+    font-family: 'IBM Plex Mono',monospace;
+    font-size: 12px;
+    color: var(--acc);
+}
+
+[aria-invalid="true"] {
+    border-color: var(--acc);
+}
+
+.a-req {
+    font-family: 'IBM Plex Mono',monospace;
+    font-size: 12px;
+    color: var(--sub);
+    margin: 0;
+}
+
+.a-form-note {
+    font-family: 'IBM Plex Mono',monospace;
+    font-size: 12px;
+    color: var(--sub);
+    max-width: 46ch;
+    margin: 0;
+}
+
+.a-form-status {
+    font-family: 'IBM Plex Mono',monospace;
+    font-size: 13px;
+    color: var(--ink);
+    min-height: 1.4em;
+}
+
+.a-form-status[data-state="error"] {
+    color: var(--acc);
+}
+
+/* Honeypot: visually hidden (aria-hidden + tabindex="-1" are set in markup) */
+.a-hp {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Links inside the contact spec panel, the privacy note and the footer legal line —
+   these components previously never contained an <a>, so they had no link styling. */
+.a-spec .v a,
+.a-form-note a,
+.a-foot .meta a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.a-spec .v a:hover,
+.a-form-note a:hover,
+.a-foot .meta a:hover {
+    color: var(--acc);
+}
+
+@media (max-width: 1024px) {
+    .a-contact {
+        grid-template-columns: 1fr;
+    }
+
+    .a-contact .a-specs {
+        margin-top: 8px;
+    }
+}
+
 @media (max-width: 1024px) {
     .a-hero.a-hpair {
         grid-template-columns: 1fr;
@@ -896,5 +1046,60 @@ align-content: {
     .tagline {
         display: block;
         margin-top: 16px;
+    }
+}
+
+/* ---- Legal pages ---- */
+.a-legal {
+    max-width: 720px;
+}
+
+.a-legal h1,
+.a-legal h2 {
+    font-family: 'IBM Plex Sans',sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -.01em;
+    line-height: 1.2;
+    margin: 0 0 8px;
+}
+
+.a-legal h2:not(:first-child) {
+    margin-top: 56px;
+}
+
+.a-legal .a-legal-sub,
+.a-legal .a-legal-meta {
+    font-family: 'IBM Plex Mono',monospace;
+    font-size: 12.5px;
+    color: var(--sub);
+    margin: 0 0 28px;
+}
+
+.a-legal h3 {
+    font-family: 'IBM Plex Sans',sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: -.01em;
+    margin: 32px 0 10px;
+}
+
+.a-legal p,
+.a-legal address {
+    font-size: 15px;
+    line-height: 1.65;
+    color: #33383d;
+    font-style: normal;
+    margin: 0 0 16px;
+}
+
+.a-legal a {
+    color: var(--acc);
+}
+
+@media (max-width: 640px) {
+    .a-legal h1,
+    .a-legal h2 {
+        font-size: 24px;
     }
 }
